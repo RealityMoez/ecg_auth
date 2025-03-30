@@ -143,12 +143,12 @@ def are_all_values_equal(arr):
 # ----------------- Classification ---------------------
 def trained_classifier(X, y, feature_type):
     
-    classifier_path = f"linear_svc_{feature_type}_classifier.pkl"
+    classifier_path = f"linear_svc_{feature_type}_classifier_2.pkl"
     # Split the dataset into training and testing sets
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
     
     if not os.path.exists(classifier_path):
-        print("Model file does not exist. Training...")
+        print("Model file does not exist.\nTraining...")
 
         # Use SMOTE to balance the dataset
         print("Balancing the dataset...")
@@ -171,9 +171,8 @@ def trained_classifier(X, y, feature_type):
         with open(classifier_path, 'wb') as f:
             pickle.dump(linear_svc_classifier, f)
     else:
-        print("Model file exists. Loading...")
+        print("Model file exists.\nLoading...")
         # Load the saved model from the file
-        classifier_path = f"linear_svc_{feature_type}_classifier.pkl"
         with open(classifier_path, 'rb') as f:
             linear_svc_classifier = pickle.load(f)
             
@@ -296,7 +295,7 @@ def extract_ar_coefficients(preprocessed_ecg_data, order=12):
     for heartbeat in preprocessed_ecg_data:
         if heartbeat.ndim > 1:
             heartbeat = heartbeat.flatten()
-        ar_coeffs = yule_walker(heartbeat, order=order)[0]  # Get only the AR coefficients
+        ar_coeffs = aryule(heartbeat, order=order)[0]  # Get only the AR coefficients
         ar_coeffs_list.append(ar_coeffs)
     return np.array(ar_coeffs_list)
 
