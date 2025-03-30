@@ -9,7 +9,7 @@ from scipy.signal import butter, filtfilt
 
 
 class Pan_tompkins:
-    """ Implementationof Pan Tompkins Algorithm.
+    """ Implementation of Pan Tompkins Algorithm.
 
     Noise cancellation (bandpass filter) -> Derivative step -> Squaring and integration.
 
