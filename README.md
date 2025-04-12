@@ -59,6 +59,8 @@ A biometric authentication system using Electrocardiogram (ECG) signals. It leve
 
 ## Dataset
 
+Dataset used: https://physionet.org/content/ptbdb/1.0.0/ 
+
 The system is designed to work with ECG signals stored as CSV files. Each file named in the format `patientXXX_yyy.csv` where XXX is the patient number and yyy is any additional information.
 
 ## Model Training
