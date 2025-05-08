@@ -3,7 +3,7 @@
 
 A biometric authentication system using Electrocardiogram (ECG) signals. It leverages the unique characteristics of an individual's heartbeat pattern to verify their identity. The system uses a combination of fiducial and non-fiducial features extracted from ECG signals to provide authentication.
 
-*(For more information about ECG signals, refer to the included `what_is_ecg.pdf` document)*
+*(For more information about ECG signals, refer to [`what_is_ecg.pdf`](https://github.com/RealityMoez/ecg_auth/blob/main/what_is_ecg.pdf) document)*
 
 ## Features
 
